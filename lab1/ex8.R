@@ -1,21 +1,19 @@
-# dla rozkladu normalnego i rozkladu t-studenta 0 15 stopniach swobody
+# Salon samochodowy rejestruje dzienn ??a sprzedaz nowego modelu samochodu ?? Shinari. 
+# Wyniki obserwacji doprowadzily do wniosku, ze rozklad liczby sprzedanych samochodów
+# w ci ??agu dnia mo ?? zna  przyblizy´c rozkladem Poissona: 
 
-# wyznaczyc kwantyle rzedu p = 0.85, p = 0.99, p = 0.27
+# lambda = 5
+# ppois(x, lambda)
 
-st = 15
 
-qnorm(0.85) # ok
-qnorm(0.99) # ok
-qnorm(0.27)
+# a) nie sprzeda ani jednej sztuki;
+ppois(0, 5)
 
-qt(0.85, st)
-qt(0.99, st) # ok
-qt(0.27, st)
+# b) sprzeda dokladnie 5 sztuk;
+ppois(5, 5)
 
-# obliczyc pr Pr(X > 1.8), Pr(X >= 2.47)
+# c) sprzeda przynajmniej jedn ??a sztuk??e;
 
-1 - pnorm(1.8, 0, 1)
-pnorm(-2.47, 0, 1)
+# d) sprzeda przynajmniej 2 sztuki ale mniej niz 5; ??
 
-1 - pt(1.8, 15)
-pt(-2.47, 15)
+# e) sprzeda 5 sztuk przy zalozeniu, ?? ze sprzedal ju ?? z ponad 3 sztuki.
